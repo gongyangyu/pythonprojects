@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/alien_war/alien_war.iml" filepath="$PROJECT_DIR$/alien_war/alien_war.iml" />
       <module fileurl="file://$PROJECT_DIR$/pyempty.iml" filepath="$PROJECT_DIR$/pyempty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/udpsocket/udpsocket.iml" filepath="$PROJECT_DIR$/udpsocket/udpsocket.iml" />
     </modules>
   </component>
 </project>
