@@ -6,19 +6,25 @@ total=0
 
 def test1(number):
     global total
+    mutex.acquire()
     for i in range(number):
         total+=1
+    mutex.release()
     print("-------g_num ---test1 %s" % str(total))
 
 
 def test2(number):
     global total
+    mutex.acquire()
     for i in range(number):
         total+=1
+    mutex.release()
     print("-------g_num ---test2 %s" % str(total))
 
 
-g_num=1000000
+g_num=10000000
+mutex=threading.Lock()
+
 
 def main():
     t1=threading.Thread(target=test1,args=(g_num,))
@@ -26,7 +32,7 @@ def main():
     t1.start()
     t2.start()
 
-    time.sleep(5)
+    time.sleep(35)
     print("-------g_num ---main %s" % str(total))
 
 if __name__ == "__main__":
