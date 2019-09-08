@@ -6,19 +6,19 @@ total=0
 
 def test1(number):
     global total
-    mutex.acquire()
     for i in range(number):
+        mutex.acquire()
         total+=1
-    mutex.release()
+        mutex.release()
     print("-------g_num ---test1 %s" % str(total))
 
 
 def test2(number):
     global total
-    mutex.acquire()
     for i in range(number):
+        mutex.acquire()
         total+=1
-    mutex.release()
+        mutex.release()
     print("-------g_num ---test2 %s" % str(total))
 
 
