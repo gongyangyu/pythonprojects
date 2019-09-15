@@ -6,19 +6,22 @@ from collections import Iterator
 class Classmate(object):
     def __init__(self):
         self.names = list()
-
+        self.curr_index=0
 
     def add(self,name):
         self.names.append(name)
 
     def __iter__(self):
-        return Classiterator()
+        return self
 
-class Classiterator(object):
-    def __iter__(self):
-        pass
     def __next__(self):
-        return 11
+        if self.curr_index < len(self.names):
+            cur_name=self.names[self.curr_index]
+            self.curr_index+=1
+            return cur_name
+        else:
+            raise StopIteration
+
 
 classmate=Classmate()
 classmate.add("lao")
